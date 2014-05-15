@@ -66,6 +66,24 @@ UCS-2 ???
 ===》 排课 （xxxx年xx学期）
 
 
+
+<h1>2014-05-15</h1>
+
+http://stackoverflow.com/questions/674458/asp-net-mvc-unit-testing-controllers-that-use-urlhelper/675269#675269
+
+提示找不到EntityFramework.dll， 是因为一个工程生成的dll名字跟EntityFramework一样。
+
+
+
+The FunctionImport 'usp_NewSchoolId' could not be found in the container 'CourseEngineContext'.
+
+
+Entity Framework 是个ORM的工具，不是任何sql server的特性它都有对应的解决方法。
+所以对于存储过程一类的，直接用ado.net 的方式进行处理。
+
+
+
+
     </body>
 
 

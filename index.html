@@ -1,105 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        <h1>Hello World</h1>
+---
+    　　layout: default
+    　　title: 我的Blog
+---
 
-        <p> Gww Ai Qll 1314 </p>
+    　　<h2>{{ page.title }}</h2>
 
+    　　<p>最新文章</p>
 
+    　　<ul>
 
-<h1>2014-05-09</h1>
-注意 serialize , serializeObject 的区别, serializeObject对于@Html.Checkbox binder的值一直为false
+    　　　　{% for post in site.posts %}
 
-serializeObject 是自己写的方法，对于这种checkbox 会返回 'true, false'的结果，导致binder出错
+    　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 
+    　　　　{% endfor %}
 
-<br/>
-
-绑定多个checkbox
-http://www.shawnmclean.com/blog/2011/04/asp-net-mvc-multiple-check-boxes-in-an-array-or-list/
-
-
-<br/>
-
-
-
-You need an editor template at: /Shared/EditorTemplates/RoleViewModel.cshtml. Make sure the name of the file is the same name as the viewmodel you are sending. This is how @Html.EditorFor(x=>Model.Roles) know to use that template.
-
-
-
-<h1>2014-05-12</h1>
-
-为了创建的目录结构满足需求
-
-1. 在创建好的src文件夹内创建一个xxxx.sln的solution文件
-2. 添加新建项目Web， 类型为ASP.NET MVC 3 Web Application。再把这个web.csproj改为与这个项目相关的信息，例如CourseEngine.Web.csproj
-
-<h1>2014-05-13</h1>
-UnInvoiceAmount
-
-
-
-
-<h1>2014-05-14</h1>
-
-<h3>varchar vs nvarchar performance</h3>
-
-joins on character fields then your database probably has worse issues than whether to use nvarchar or varchar, generally speaking.
-
-<h3>Unicode Best Practice</h3>
-DBCS double-byte character sets
-
-
-UCS-2 ???
-
-
-有些有年级，有些是没有年级的
-
-
-1. 学校设置
-2. 年级设置
-3. 班级设置
-4. 教师设置
-5. 课程设置
-
-
-===》 排课 （xxxx年xx学期）
-
-
-
-<h1>2014-05-15</h1>
-
-http://stackoverflow.com/questions/674458/asp-net-mvc-unit-testing-controllers-that-use-urlhelper/675269#675269
-
-提示找不到EntityFramework.dll， 是因为一个工程生成的dll名字跟EntityFramework一样。
-
-
-
-The FunctionImport 'usp_NewSchoolId' could not be found in the container 'CourseEngineContext'.
-
-
-Entity Framework 是个ORM的工具，不是任何sql server的特性它都有对应的解决方法。
-所以对于存储过程一类的，直接用ado.net 的方式进行处理。
-
-
-Core内定义Model
-
-database first 中的model与domain model 的关系？
-
-
-
-在web中定义ViewModel
-
-
-domain object and memento ???
-
-
-
-unit of work and EF
-
-
-    </body>
-
-
-</html>
+    　　</ul>
 

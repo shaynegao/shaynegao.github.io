@@ -1,2 +1,1 @@
-baseurl: /shaynegao.github.io
-markdown: redcarpet
+markdown: rdiscount
